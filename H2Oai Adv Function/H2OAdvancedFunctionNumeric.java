@@ -185,19 +185,18 @@ public class H2OAdvancedFunctionNumeric
         Object result=null;
 		try {
           if (category.equals("Regression")){
-        	  RegressionModelPrediction prediction;
-
-				prediction = model.predictRegression(row);
-
-              result=prediction.value;
+        	RegressionModelPrediction prediction = model.predictRegression(row);
+		double a = prediction.value;
+                result=a;
           }
           if (category.equals("Binomial")){
         	  BinomialModelPrediction prediction=model.predictBinomial(row);
-        	  result=prediction.label;
+        	  result=prediction.label;;
           }
           if (category.equals("Clustering")){
         	  ClusteringModelPrediction prediction = model.predictClustering(row);
-        	  result=prediction.cluster;
+		  int a = prediction.cluster;
+        	  result=a;
           }
           if (category.equals("Multinomial")){
         	  MultinomialModelPrediction prediction = model.predictMultinomial(row);
